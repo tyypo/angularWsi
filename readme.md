@@ -17,6 +17,6 @@ My current solution is copy and paste the content of https://www.westelm.com/ser
 Other possible solution are:
 1. host a proxy server to redirect westelm api. For example write a piece of Spring code to consume the westelm api and deploy to heroku. The angular app will consume the herokuapp api. Pretty simliar to the github approach above.
 2. config your browser. use proper extension/add-ons or hack the browser.
-3. find a way to hack the frontend end code (if would be easy if angular 5 downward, or plain js) to bypass CORS issue.
+3. find a way to hack the frontend end code (it would be easy if angular 5 downward, or plain js) to bypass CORS issue.
 
 sorry no tests, I am running out of time.
