@@ -1,0 +1,18 @@
+<div *ngFor="let product of page?.groups; let i = index" class="productContainer" [class.isEnd]="i % 3 == 0">
+  <a id="name" [href]="product.links.www" target="_blank">
+    <div>{{product.name}}</div>
+  </a>
+  <img class="heroImage" [src]="product.hero.href" [alt]="product.hero.alt" [height]="product.hero.height" [width]="product.hero.width" (click)="showImage($event)">
+  <div id="descContainer">
+    <div id="priceRange">${{product.priceRange.selling.low}} - ${{product.priceRange.selling.high}}</div>
+    <div id="message" *ngFor="let message of product.messages">
+      {{message}}
+    </div>
+  </div>
+  <div id="thumbnails" class="hidden">
+    <div class="overlay" (click)="hideImage($event)"></div>
+    <div class="navBtn left" (click)="prevImg(product.images.length)"><</div>
+    <img [src]="product.images[thumbnailIndex]?.href" [alt]="product.images[thumbnailIndex]?.alt" [height]="product.images[thumbnailIndex]?.height" [width]="product.images[thumbnailIndex]?.width" (click)="nextImg(product.images.length)">
+    <div class="navBtn right" (click)="nextImg(product.images.length)">></div>
+  </div>
+</div>
